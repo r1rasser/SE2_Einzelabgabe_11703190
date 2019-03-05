@@ -3,4 +3,5 @@
     <string name="enter_student_num_txt">Enter your Student number:</string>
     <string name="server_answer_txt">Servers Answer</string>
     <string name="send_button">SEND</string>
+    <string name="error_no_studentNum">Student number must be entered!</string>
 </resources>
