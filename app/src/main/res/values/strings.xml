@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">NetworkTest_11703190</string>
+    <string name="enter_student_num_txt">Enter your Student number:</string>
+    <string name="server_answer_txt">Servers Answer</string>
+    <string name="send_button">SEND</string>
 </resources>
