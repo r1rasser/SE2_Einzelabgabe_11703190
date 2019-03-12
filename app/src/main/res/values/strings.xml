@@ -3,5 +3,8 @@
     <string name="enter_student_num_txt">Enter your Student number:</string>
     <string name="server_answer_txt">Servers Answer</string>
     <string name="send_button">SEND</string>
+    <string name="calc_button">CALCULATE</string>
     <string name="error_no_studentNum">Student number must be entered!</string>
+    <string name="server_host">se2-isys.aau.at</string>
+    <string name="port">53212</string>
 </resources>
