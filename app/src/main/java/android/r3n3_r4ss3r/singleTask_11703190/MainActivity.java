@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.io.BufferedReader;
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView serverAnswer;
     private EditText student_number;
     private ServerRequest serverRequest;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,23 +29,16 @@ public class MainActivity extends AppCompatActivity {
         serverAnswer = findViewById(R.id.serverAnswer);
         student_number = findViewById(R.id.student_num);
         serverRequest = new ServerRequest();
+        progressBar = findViewById(R.id.serverRequestProgress);
     }
 
-    /**
-     * This method is used to send the entered student number to the specified server (see @strings)
-     * and write the answer to a text-field.
-     * The variables
-     * _COSI [Client Out Server In] and
-     * _CISO [Client In Server Out]
-     * are the used streams.
-     *
-     * @param view
-     */
     public void send(View view) {
         ServerRequest request = new ServerRequest();
         request.execute((Void) null);
+        progressBar.setVisibility(View.VISIBLE);
         try {
             serverAnswer.setText(request.get());
+            progressBar.setVisibility(View.INVISIBLE);
         } catch (ExecutionException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
